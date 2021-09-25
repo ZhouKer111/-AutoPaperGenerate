@@ -16,16 +16,16 @@ public class Page {
     //     return IndexCommand;
     // }
     //登录页
-    public User  Login(List<User> user){
-        Scanner input=new Scanner(System.in);
-        String userName,passWord;
+    public User Login(List<User> user) {
+        Scanner input = new Scanner(System.in);
+        String userName, passWord;
         System.out.println("—————————登录页————————");
         System.out.println("     用户名     密码  ");
-        while(true){
-            String []TempVar;
+        while (true) {
+            String[] TempVar;
             TempVar = input.nextLine().trim().split(" ");
-            userName=TempVar[0];
-            passWord=TempVar[1];
+            userName = TempVar[0];
+            passWord = TempVar[1];
             User usertemp;
             usertemp = null;
             for (User value : user) {
@@ -33,11 +33,11 @@ public class Page {
                     usertemp = value;
                 }
             }
-            if(usertemp!=null){
-                System.out.println("当前选择为"+usertemp.getStuType()+"出题");
+            if (usertemp != null) {
+                System.out.println("当前选择为" + usertemp.getStuType() + "出题");
                 //input.close();
                 return usertemp;
-            }else {
+            } else {
                 System.out.println("请输入正确的用户名、密码.");
                 //input.close();
             }
